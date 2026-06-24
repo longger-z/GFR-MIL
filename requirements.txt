@@ -1,0 +1,7 @@
+einops
+h5py
+numpy<2
+pandas
+scikit-learn
+torch
+xformers

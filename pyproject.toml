@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gfr-mil"
+version = "0.1.0"
+description = "GFR-MIL training and evaluation code for multi-scale WSI features."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "einops",
+    "h5py",
+    "numpy<2",
+    "pandas",
+    "scikit-learn",
+    "torch",
+    "xformers",
+]
+
+[project.scripts]
+mil-train = "gfr_mil.train:main"
+mil-survival-train = "gfr_mil.train_survival:main"
+mil-eval = "gfr_mil.eval:main"
+mil-survival-eval = "gfr_mil.eval_survival:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
